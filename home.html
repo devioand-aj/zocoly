@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>template2</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="icon" href='./template2assets/icons/logo.png'> -->
+    <link rel="icon" href='./template2assets/icons/logo.png'>
+
+    <link rel="stylesheet" type="text/css" href='./home.css'>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+
+        <nav class="navbar">
+
+            <div class="container">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- <a class="navbar-brand" href="#"><img src="template2assets/icons/logo.png" alt="logo"></a> -->
+                    <a class="navbar-brand" href="#"><img src="./template2assets/icons/logo.png" alt="logo"></a>
+                    <div class="product-detail" style="display: none">
+                        <h3>Nike React Miler</h3>
+                        <div class="bread-crumb">
+                            <span><a href="#">Men</a></span>
+                            <img src="./template2assets/icons/angle-right.png" alt="angle-right">
+                            <span>Running Shoe</span>
+                        </div>
+                    </div>
+                    <div class="col-xs-2 mob-add">
+                        <a href="#" class="cart">
+                            <img src= "./template2assets/icons/cart.png" alt="cart">
+                            <span class="products-count">13</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="collapse navbar-collapse" id="myNavbar">
+
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Men</a></li>
+                        <li><a href="#">Women</a></li>
+                        <li><a href="#">Kids</a></li>
+                        <li><a href="#">Collections</a></li>
+                        <li><a href="#">Sale</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li style="padding: 5px 15px;">
+                            <div class="search">
+                                <input type="text" placeholder="Search">
+                                <button><img src="./template2assets/icons/search.png" alt="search"></button>
+                            </div>
+                        </li>
+                        <li class="hideitem">
+                            <a href="#" class="cart">
+                                <img src="./template2assets/icons/cart.png" alt="cart">
+                                <span class="products-count">13</span>
+                            </a>
+                        </li>
+                        <li><a href="#"><img src="./template2assets/icons/user.png" alt="user"></a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+    <div class="row showinscroll" id="showinscroll">
+        <!-- <div class="column">
+            <div class="card">
+                <img src="template2assets/images/product.png" alt="productImage">
+                <div class="content">
+                    <div class="content1">
+                        <h3>Nike Renew Run</h3>
+                        <h2>$130</h2>
+                    </div>
+                    <div class="content2">
+                        <button><img src="template2assets/icons/white-cart.png" alt="white-cart"></button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+    </div>
+
+    <div class="cards">
+
+        <div class="c col-xs-12 recommmended">
+
+            <div class="row1" id="colId">
+                <div class="sort">
+                    <span class="items">439 Products</span>
+                    <div class="dropdowns sorting">
+                        <button class="dropdowns-btn active1" onclick="toggle('sorting');">
+                            <span class="value">Sort by</span>
+                        </button>
+                        <div class="dropdowns-content">
+                            <span onclick="sortApiNameFunc()" class="dropdowns-item">name</span>
+                            <span onclick="sortApiDateFunc()" class="dropdowns-item">date</span>
+                            <span onclick="sortApiTypeFunc()" class="dropdowns-item">type</span>
+                            <span class="dropdowns-item">size</span>
+                            <span class="dropdowns-item">tags</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-sort" style="display: none;">
+                    <label class="items">439 Products</label><br>
+                    <button class="filterbtn" id="filterbtn">Filters</button>
+                    <button class="sortbtn" id="sortbtn">Sort By</button>
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                        <!-- Modal-content -->
+                        <div class="modal-content" id="myContent">
+                            <span class="close">&times;</span>
+                            <h2>Filters</h2>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xm-12 p">
+                                <div class="collapsible-panels">
+                                    <div class="collapsible-panel c-p">
+                                        <button class="collapsible">Categories</button>
+                                        <div class="content">
+                                            <span class="dropdowns-item">name</span>
+                                            <span class="dropdowns-item">date</span>
+                                            <span class="dropdowns-item">type</span>
+                                            <span class="dropdowns-item">size</span>
+                                            <span class="dropdowns-item">tags</span>
+                                        </div>
+                                    </div>
+                                    <div class="collapsible-panel">
+                                        <button class="collapsible">On Sale</button>
+                                        <div class="content">
+                                            <span class="dropdowns-item">name</span>
+                                            <span class="dropdowns-item">date</span>
+                                            <span class="dropdowns-item">type</span>
+                                            <span class="dropdowns-item">size</span>
+                                            <span class="dropdowns-item">tags</span>
+                                        </div>
+                                    </div>
+                                    <div class="collapsible-panel">
+                                        <button class="collapsible">Size</button>
+                                        <div class="content">
+                                            <span class="dropdowns-item">name</span>
+                                            <span class="dropdowns-item">date</span>
+                                            <span class="dropdowns-item">type</span>
+                                            <span class="dropdowns-item">size</span>
+                                            <span class="dropdowns-item">tags</span>
+                                        </div>
+                                    </div>
+                                    <div class="collapsible-panel">
+                                        <button class="collapsible">Color</button>
+                                        <div class="content">
+                                            <span class="dropdowns-item">name</span>
+                                            <span class="dropdowns-item">date</span>
+                                            <span class="dropdowns-item">type</span>
+                                            <span class="dropdowns-item">size</span>
+                                            <span class="dropdowns-item">tags</span>
+                                        </div>
+                                    </div>
+                                    <div class="collapsible-panel">
+                                        <button class="collapsible">Material</button>
+                                        <div class="content">
+                                            <span class="dropdowns-item">name</span>
+                                            <span class="dropdowns-item">date</span>
+                                            <span class="dropdowns-item">type</span>
+                                            <span class="dropdowns-item">size</span>
+                                            <span class="dropdowns-item">tags</span>
+                                        </div>
+                                    </div>
+                                    <div class="apply-div">
+                                        <button class="apply-filter">Apply Filter</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Model-content -->
+                    </div>
+                    <!-- End Model -->
+
+                    <!-- viewDetail Modal -->
+                    <div id="detailModal" class="detailModal">
+                        <!-- Modal-content -->
+                        <div class="modal-content">
+                            <span class="closeBtn">&times;</span>
+                            <h3>Nike React Miler</h3>
+                            <p>SKU# 583942439</p>
+                            <div class="price">
+                                <h2>$120</h2>
+                                <img src="./template2assets/icons/tag.png" alt="tag">
+                                <span>15% off</span>
+                            </div>
+
+                            <div class="row1">
+
+                                <div class="c1 col-xs-6">
+                                    <label for="size">Size</label>
+                                    <div class="dropdowns size">
+                                        <button class="dropdowns-btn" onclick="toggle('size');">
+                                            <span class="value">US 10.5</span>
+                                        </button>
+                                        <div class="dropdowns-content">
+                                            <span class="dropdowns-item">US 10.5</span>
+                                            <span class="dropdowns-item">US 20.5</span>
+                                            <span class="dropdowns-item">US 30.5</span>
+                                            <span class="dropdowns-item">US 40.5</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="c1 col-xs-6">
+                                    <label for="size">Color</label>
+                                    <div class="dropdowns color">
+                                        <button class="dropdowns-btn" onclick="toggle('color');">
+                                            <div class="color" style="background-color: #D4D5D9"></div>
+                                        </button>
+                                        <div class="dropdowns-content">
+                                            <span class="dropdowns-item">
+                                                <span class="color" style="background-color: #D4D5D9"></span>
+                                            </span>
+                                            <span class="dropdowns-item">
+                                                <span class="color" style="background-color: red"></span>
+                                            </span>
+                                            <span class="dropdowns-item">
+                                                <span class="color" style="background-color: green"></span>
+                                            </span>
+                                            <span class="dropdowns-item">
+                                                <span class="color" style="background-color: blue"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="c1 col-xs-12">
+                                    <label for="size">Quantity</label>
+                                    <div class="dropdowns quantity">
+                                        <button class="dropdowns-btn" onclick="toggle('quantity');">
+                                            <span class="value">5</span>
+                                        </button>
+                                        <div class="dropdowns-content">
+                                            <span class="dropdowns-item">1</span>
+                                            <span class="dropdowns-item">2</span>
+                                            <span class="dropdowns-item">3</span>
+                                            <span class="dropdowns-item">4</span>
+                                            <span class="dropdowns-item">5</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="c1 col-xs-9">
+                                    <button class="add-to-cart">
+                                        Add to Cart<img src="./template2assets/icons/white-cart.png" alt="white-cart">
+                                    </button>
+                                </div>
+
+                                <div class="c1 col-xs-3">
+                                    <button class="heart">
+                                        <img src="./template2assets/icons/heart.png" alt="heart">
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- End modal-content -->
+                    </div>
+                    <!-- End viewDetail modal -->
+                </div>
+
+
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xm-12 p">
+                    <div class="collapsible-panels">
+                        <div class="collapsible-panel c-p">
+                            <button class="collapsible">Categories</button>
+                            <div class="content" id="categoryContent">
+                                <!-- <span onclick="mensFunc()" class="dropdowns-item">Mens</span>
+                                <span onclick="womenFunc()" class="dropdowns-item">Women</span> -->
+                                <!-- <span class="dropdowns-item">type</span>
+                                <span class="dropdowns-item">size</span>
+                                <span class="dropdowns-item">tags</span> -->
+                            </div>
+                        </div>
+                        <div class="collapsible-panel">
+                            <button class="collapsible">On Sale</button>
+                            <div class="content">
+                                <span class="dropdowns-item">name</span>
+                                <span class="dropdowns-item">date</span>
+                                <span class="dropdowns-item">type</span>
+                                <span class="dropdowns-item">size</span>
+                                <span class="dropdowns-item">tags</span>
+                            </div>
+                        </div>
+                        <div class="collapsible-panel">
+                            <button class="collapsible">Size</button>
+                            <div class="content" id="sizeContent">
+                                <!-- <span class="dropdowns-item">name</span>
+                                <span class="dropdowns-item">date</span>
+                                <span class="dropdowns-item">type</span>
+                                <span class="dropdowns-item">size</span>
+                                <span class="dropdowns-item">tags</span> -->
+                            </div>
+                        </div>
+                        <div class="collapsible-panel">
+                            <button class="collapsible">Color</button>
+                            <div class="content" id="colorContent">
+                                <!-- <span class="dropdowns-item">name</span>
+                                <span class="dropdowns-item">date</span>
+                                <span class="dropdowns-item">type</span>
+                                <span class="dropdowns-item">size</span>
+                                <span class="dropdowns-item">tags</span> -->
+                            </div>
+                        </div>
+                        <div class="collapsible-panel">
+                            <button class="collapsible">Material</button>
+                            <div class="content">
+                                <span class="dropdowns-item">name</span>
+                                <span class="dropdowns-item">date</span>
+                                <span class="dropdowns-item">type</span>
+                                <span class="dropdowns-item">size</span>
+                                <span class="dropdowns-item">tags</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row1" id="data-showcase">
+                <!-- All the products will be displayed here -->
+            </div>
+
+        </div>
+
+        <div class="move-next">
+            <!-- <a class="active" href="#">1</a>
+            <a class="non-active" href="#">2</a>
+            <a class="non-active" href="#">3</a>
+            <span>. . . .</span>
+            <a class="non-active" href="#">15</a>
+            <a class="non-active arrow" href="#"></a> -->
+        </div>
+
+</body>
+
+
+
+<script>
+    console.log({ check: 'asad' })
+// style="object-fit: cover;"
+        
+
+        function paginatedProducts (array, itemsPerPage = 2, pageNo) {
+
+            // (array.length / itemsPerPage).forEach((el, index) => {
+        // });
+
+            let start = 0;
+            let end = 0;
+
+            if (pageNo === 1) {
+                start = 0;
+                end = itemsPerPage;
+            } 
+
+            start = (pageNo - 1) * itemsPerPage;
+            end = (start + itemsPerPage);
+
+            console.log({ start, end })
+
+            const paginatedProd = array.slice(start, end);
+
+            console.log(paginatedProd);
+            return paginatedProd;
+        }
+
+    
+
+
+    var x = 26
+    $(document).ready(function () {
+        console.log('ASad')
+
+        var api = "https://zocoly-backend.herokuapp.com/product/get/";
+
+        // Showing categories
+        $.post(api, function(data) {
+            console.log(data);
+            data[0].collections.forEach(collection => {
+                $('#categoryContent').append(
+                    `<span onclick=${collection.name+"Func()"} class="dropdowns-item">${collection.name}</span>`
+                )
+            })
+        })
+
+        // Showing size
+        $.post(api, function(data) {
+            // console.log({ check: data[0].variant[0].variant_options })
+            data[0].variant[0].variant_options.forEach((size, index) => {
+                $('#sizeContent').append(
+                    // '<span onclick"MenFunc()" class="dropdowns-item">'+ size.name + '</span>'
+                    '<span onclick="sizeFunc(\'' + size.name + '\')" class="dropdowns-item">'+ size.name +'</span>'
+                )
+            })
+        })
+
+        //Showing colors
+        $.post(api, function(data) {
+            console.log({ data });
+            data[0].variant[1].variant_options.forEach(color => {
+                $('#colorContent').append(
+                    '<span onclick="colorFunc(\'' + color.name + '\')" class="dropdowns-item">'+ color.name +'</span>'
+                )
+            })
+        })
+
+
+
+        const dummyArray = [
+                { id: 1, title: 'Shirt1' }, 
+                { id: 2, title: 'Shirt2' },
+                { id: 3, title: 'Shirt3' },
+                { id: 4, title: 'Shirt4' },
+            ];
+
+        const products = paginatedProducts(dummyArray, 2);
+
+
+        products.forEach((el, index) => {
+            $('.move-next').append(
+                `<a class="active">${index + 1}</a>`
+            )
+        });
+
+
+
+        // jquery JSON response
+        var jsonApi = "https://zocoly-backend.herokuapp.com/product/iget/Running_Shoe/";
+        $.post(jsonApi, function (data) {
+
+            data.slice(-3).forEach(function (data) {
+                $("#showinscroll").append(
+                    "<div  class='column'>" +
+                    "<div  class='card'>" +
+                    "<img src =" + 'https://zocoly-backend.herokuapp.com' + data.item_files[0].image + ">" +
+                    "<div  class='content'>" +
+                    "<div  class='content1'>" +
+                    "<h3 class='color'>" + data.title + "</h3>" +
+                    "<h2 class='color'> $" + data.price + "</h2>" +
+                    "</div>" +
+                    "<div  class='content2'>" +
+                    // "<button><img  src=" + 'https://zocoly-backend.herokuapp.com' + data.item_files[0].image + "></button>" +
+                    "<button><img  src='template2assets/icons/white-cart.png'" + "></button>" +
+                    "</div>" +
+                    "</div>" +
+                    "</div>" +
+                    "</div>"
+                );
+            })
+        });
+
+       $.post(jsonApi, function (data) {
+        const itemsPerPage = 5;
+
+
+        function paginationCockpit (data, itemsPerPage, callBackFunc) {
+            let paginated = data;
+            for (let i = 0; i < data.length / itemsPerPage; i++) {
+                $('.move-next').append(
+                    `<a class="active pageNumber" style="margin: 5px" id="${i + 1}">${i + 1}</a>`
+                )
+            }
+
+            $(document).ready(function() {
+                $('#data-showcase').empty();
+                paginated = paginatedProducts(data, 5, 1);
+                console.log({ paginated });
+                callBackFunc(paginated);
+        })
+
+            $('.pageNumber').click(function (check) {
+                $('#data-showcase').empty();
+                    paginated = paginatedProducts(data, 5, check.currentTarget.id);
+                    callBackFunc(paginated);    
+            })
+        }
+        
+        paginationCockpit(data, itemsPerPage, HTML);
+            
+        function HTML(data) {
+            data.forEach(function (data) {
+                var a = data.id
+                // {#console.log(a)#}
+                $("#data-showcase").append(
+                    "<div class='c col-lg-3 col-md-3 col-sm-6 col-xm-12'" + " id = " + data.id + " >" +
+                    "<div  class='main'>" +
+                    "<a href=" + 'id=' + data.id + " > " +
+                    // {#"<a href=" + '{% url 'check_view1' a %}' + " > " +#}
+                    "<img src ='template2assets/icons/heart.png'" + " class='heart'>" +
+                    // "<img src = " + 'https://zocoly-backend.herokuapp.com' + data.item_files[0].image + ">" +
+                    `<img src = "https://zocoly-backend.herokuapp.com${data.item_files[0].image}" style="object-fit: cover;">` +
+                    "<h5 class='color'>" + data.title + "</h5>" +
+                    "<span class='stars'>" +
+                    "<img src ='template2assets/icons/fill-star.png'" + ">" +
+                    "<img src ='template2assets/icons/fill-star.png'" + ">" +
+                    "<img src ='template2assets/icons/fill-star.png'" + ">" +
+                    "<img src ='template2assets/icons/fill-star.png'" + ">" +
+                    "<img src ='template2assets/icons/empty-star.png'" + ">" +
+                    "</span>" +
+                    "<span class='rating'>" + 4.5 + "</span >" +
+                    "<div>" +
+                    "<span> $" + data.price + "</span>" +
+                    "<button>" +
+                    "<img src='template2assets/icons/white-cart.png'" + ">" +
+                    "</button>" +
+                    "</div>" +
+                    "</a>" +
+                    "<span class='cspan' id = 'detail'>See Details</span>" +
+                    "</div>" +
+                    "</div>"
+                );
+
+            })
+        }
+    });
+})
+
+////// HTML MARKUPS
+function prodShowcaseHTML(products) {
+    products.forEach(function (product) {
+                var a = product.id
+                // $("#colId").append(
+                $("#data-showcase").append(
+                    // "<div>New Check</div>"
+                    "<div class='c col-lg-3 col-md-3 col-sm-6 col-xm-12'" + " id = " + product.pk + " >" +
+                    "<div  class='main'>" +
+                    "<a href=" + 'id=' + product.id + " > " +
+                    // {#"<a href=" + '{% url 'check_view1' a %}' + " > " +#}
+                    "<img src ='template2assets/icons/heart.png'" + " class='heart'>" +
+                    // "<img src = " + 'https://zocoly-backend.herokuapp.com' + data.item_files[0].image + ">" +
+                    `<img src = "https://zocoly-backend.herokuapp.com${product.item_files[0].image}" style="object-fit: cover;">` +
+                    "<h5 class='color'>" + product.title + "</h5>" +
+                    "<span class='stars'>" +
+                    "<img src ='template2assets/icons/fill-star.png'" + ">" +
+                    "<img src ='template2assets/icons/fill-star.png'" + ">" +
+                    "<img src ='template2assets/icons/fill-star.png'" + ">" +
+                    "<img src ='template2assets/icons/fill-star.png'" + ">" +
+                    "<img src ='template2assets/icons/empty-star.png'" + ">" +
+                    "</span>" +
+                    "<span class='rating'>" + 4.5 + "</span >" +
+                    "<div>" +
+                    "<span> $" + product.price + "</span>" +
+                    "<button>" +
+                    "<img src='template2assets/icons/white-cart.png'" + ">" +
+                    "</button>" +
+                    "</div>" +
+                    "</a>" +
+                    "<span class='cspan' id = 'detail'>See Details</span>" +
+                    "</div>" +
+                    "</div>"
+                );
+
+            })
+}
+    
+// Pagination Cockpit
+function paginationCockpit (data, itemsPerPage = 5, callBackFunc) {
+
+    let paginated = data;
+    for (let i = 0; i < data.length / itemsPerPage; i++) {
+        $(`.move-next`).empty();
+        $('.move-next').append(
+            `<a class="active pageNumber" id="${i + 1}">${i + 1}</a>`
+        )
+    }
+
+    $(document).ready(function() {
+        $('#data-showcase').empty();
+        paginated = paginatedProducts(data, 5, 1);
+        callBackFunc(paginated);
+    })
+
+    $('.pageNumber').click(function (check) {
+        $('#data-showcase').empty();
+            paginated = paginatedProducts(data, 5, check.currentTarget.id);
+            callBackFunc(paginated);    
+    })
+}
+
+
+// Functional methods
+function sortApiNameFunc () {
+        $('#data-showcase').empty();
+
+        var sortApi = "https://zocoly-backend.herokuapp.com/product/sort/title/";
+        $.post(sortApi, function (data){
+            const itemsPerPage = 5;
+
+            paginationCockpit(data, itemsPerPage, prodShowcaseHTML);
+        })
+}
+
+function sortApiDateFunc () {
+    var sortApi = "https://zocoly-backend.herokuapp.com/product/sort/date_uploaded/";
+    const itemsPerPage = 5;
+    $('#data-showcase').empty();        
+
+    $.post(sortApi, function (data){
+        paginationCockpit(data, itemsPerPage, prodShowcaseHTML);
+    })
+}
+
+function sortApiTypeFunc () {
+    var sortApi = "https://zocoly-backend.herokuapp.com/product/sort/type/";
+    const itemsPerPage = 5;
+    $('#data-showcase').empty(); 
+
+    $.post(sortApi, function (data){
+        paginationCockpit(data, itemsPerPage, prodShowcaseHTML);
+    })
+}
+
+function sizeFunc(size) {
+    $('#data-showcase').empty();
+    $(`.move-next`).empty();
+        
+    const productsAPI = "https://zocoly-backend.herokuapp.com/product/iget/Running_Shoe/";
+    $.post(productsAPI, function(products) {
+        const filteredProducts = products.filter(product => product.variant_optionss[0].name == size);
+        
+        prodShowcaseHTML(filteredProducts);
+    })
+}
+
+function colorFunc(color) {
+    $('#data-showcase').empty();
+    $(`.move-next`).empty();
+    // console.log({ sizeArray })
+        
+    const productsAPI = "https://zocoly-backend.herokuapp.com/product/iget/Running_Shoe/";
+    $.post(productsAPI, function(products) {
+        const filteredProducts = products.filter(product => product.variant_optionss[1].name == color);
+        
+        prodShowcaseHTML(filteredProducts);
+    })
+}
+
+function MensFunc() {
+        console.log("sortApiTypeFunc :: Men");
+
+        $('#data-showcase').empty();
+        $(`.move-next`).empty();
+
+
+        var sortApi = "https://zocoly-backend.herokuapp.com/product/cat/Mens/";
+        $.post(sortApi, function (data){
+            const itemsPerPage = 5;
+            paginationCockpit(data, itemsPerPage, prodShowcaseHTML);
+        })
+}
+
+
+function WomenFunc() {
+          console.log("sortApiTypeFunc :: women");
+
+          $('#data-showcase').empty();
+
+        var sortApi = "https://zocoly-backend.herokuapp.com/product/cat/Women/";
+        $.post(sortApi, function (data){
+           data.forEach(function (data) {
+                var a = data.id
+                console.log( data.pk)
+                $("#data-showcase").append(
+                    "<div class='c col-lg-3 col-md-3 col-sm-6 col-xm-12'" + " id = " + data.pk + " >" +
+                    "<div  class='main'>" +
+                    "<a href=" + 'id=' + data.pk + " > " +
+                    // {#"<a href=" + '{% url 'check_view1' a %}' + " > " +#}
+                    "<img src='template2assets/icons/heart.png'" + " class='heart'>" +
+                    // {#"<img src = " + 'https://zocoly-backend.herokuapp.com' + data.item_files[0].image + ">" +#}
+                    `<img src = "https://zocoly-backend.herokuapp.com${data.item_files[0].image}" style="object-fit: cover;">` +
+                    "<h5 class='color'>" + data.title + "</h5>" +
+                    "<span class='stars'>" +
+                    "<img src='template2assets/icons/fill-star.png'" + ">" +
+                    "<img src='template2assets/icons/fill-star.png'" + ">" +
+                    "<img src='template2assets/icons/fill-star.png'" + ">" +
+                    "<img src='template2assets/icons/fill-star.png'" + ">" +
+                    "<img src='template2assets/icons/empty-star.png'" + ">" +
+                    "</span>" +
+                    "<span class='rating'>" + 4.5 + "</span >" +
+                    "<div>" +
+                    "<span> $" + data.price + "</span>" +
+                    "<button>" +
+                    "<img src='template2assets/icons/white-cart.png'" + ">" +
+                    "</button>" +
+                    "</div>" +
+                    "</a>" +
+                    "<span class='cspan' id = 'detail'>See Details</span>" +
+                    "</div>" +
+                    "</div>"
+                );
+
+            })
+        })
+}
+    
+
+//  view detail Model
+    var detailModal = document.getElementById("detailModal");
+    var spanClose = document.getElementsByClassName("closeBtn")[0];
+
+    $(document).on('click', "#detail", function () {
+        detailModal.style.display = "block";
+    });
+
+    spanClose.onclick = function () {
+        detailModal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == detailModal) {
+            console.log("clicked")
+            detailModal.style.display = "none";
+        }
+    }
+    // End view detail Model
+
+    // The Model
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("filterbtn");
+    var span = document.getElementsByClassName("close")[0];
+
+
+    btn.onclick = function () {
+        modal.style.display = "block";
+        modal.style.bottom = "0px";
+    }
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    // End Model
+
+
+    // Collapsible Panel
+    var increase = 0;
+    var collapsiblePanel = document.getElementsByClassName("collapsible");
+
+    for (let i = 0; i < collapsiblePanel.length; i++) {
+
+        collapsiblePanel[i].addEventListener("click", function () {
+
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+
+            if (content.style.maxHeight) {
+                increase = increase - 290;
+                content.style.maxHeight = "";
+                document.getElementById("myContent").style.height = 490 + increase + "px";
+
+            } else {
+                increase = increase + 290;
+                content.style.maxHeight = content.scrollHeight + "px";
+                document.getElementById("myContent").style.height = 490 + increase + "px";
+            }
+
+        });
+
+    }
+
+    // Dropdowns
+
+    $(document).click(function () {
+        $(".dropdowns-content").hide();
+        $(`.dropdowns-btn`).removeClass("active");
+    });
+
+    $(".dropdowns").click(function (e) {
+        e.stopPropagation();
+    });
+
+    function toggle(dropdown) {
+
+        if (dropdown !== "size") {
+            $('.size .dropdowns-content').hide();
+            $(`.size .dropdowns-btn`).removeClass("active");
+        }
+        if (dropdown !== "color") {
+            $('.color .dropdowns-content').hide();
+            $(`.color .dropdowns-btn`).removeClass("active");
+        }
+        if (dropdown !== "quantity") {
+            $('.quantity .dropdowns-content').hide();
+            $(`.quantity .dropdowns-btn`).removeClass("active");
+        }
+        if (dropdown !== "sorting") {
+            $('.sorting .dropdowns-content').hide();
+            $(`.sorting .dropdowns-btn`).removeClass("active");
+        }
+
+        $(`.${dropdown} .dropdowns-btn`).toggleClass("active");
+        $(`.${dropdown} .dropdowns-content`).toggle();
+
+    }
+
+    document.querySelectorAll('.size .dropdowns-item').forEach(function (item) {
+
+        item.addEventListener('click', function () {
+            let value = document.querySelector('.size .dropdowns-btn .value');
+            value.innerText = item.textContent;
+            $(".size .dropdowns-content").hide();
+            $(`.size .dropdowns-btn`).removeClass("active");
+        });
+
+    });
+
+    document.querySelectorAll('.color .dropdowns-item').forEach(function (item) {
+
+        item.addEventListener('click', function () {
+            let color = document.querySelector('.color .dropdowns-btn .color');
+            let selectedColor = item.children[0].style.backgroundColor;
+            color.style.backgroundColor = selectedColor;
+            $(".color .dropdowns-content").hide();
+            $(`.color .dropdowns-btn`).removeClass("active");
+        });
+
+    });
+
+    document.querySelectorAll('.quantity .dropdowns-item').forEach(function (item) {
+
+        item.addEventListener('click', function () {
+            let value = document.querySelector('.quantity .dropdowns-btn .value');
+            value.innerText = item.textContent;
+            $(".quantity .dropdowns-content").hide();
+            $(`.quantity .dropdowns-btn`).removeClass("active");
+        });
+
+    });
+
+    document.querySelectorAll('.sorting .dropdowns-item').forEach(function (item) {
+
+        item.addEventListener('click', function () {
+            let value = document.querySelector('.sorting .dropdowns-btn');
+            value.innerText = item.textContent;
+            $(".sorting .dropdowns-content").hide();
+            $(`.sorting .dropdowns-btn`).removeClass("active");
+        });
+
+    });
+</script>
+</html>
